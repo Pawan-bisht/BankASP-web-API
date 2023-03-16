@@ -62,7 +62,7 @@ namespace BankingWebApi.Repository{
             var account = user.Accounts.Where(account => account.AccountNumber.Equals(depositeAccountDto.AccountNumber)).First();
             
             if(depositeAccountDto.WithdrawAmount > 0.9*account.Balance) {
-                throw new Exception("Withdraw ammount cannot be more than 90% of your current deposit");
+                throw new Exception("Withdraw ammount cannot be more than 90% of your current deposite");
             } else if((account.Balance - depositeAccountDto.WithdrawAmount) < 100) {
                 throw new Exception("Minimum ammount cannot less than 100$");
             } else {

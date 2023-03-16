@@ -1,8 +1,6 @@
 using BankingWebApi.Interfaces;
 using BankingWebApi.Models;
 using BankingWebApi.DTO;
-using AutoMapper;
-using System.Net;
 using System.Globalization;
 
 namespace BankingWebApi.Repository{

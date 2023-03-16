@@ -1,6 +1,6 @@
 using BankingWebApi.Interfaces;
 using BankingWebApi.Repository;
-using AutoMapper;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

@@ -14,7 +14,7 @@ namespace BankingWebApi.Repository{
                 throw new Exception("Minimum balance in account should be 100$");
             }
             if(createAccountDto.DepositeAmount > 10000){
-                throw new Exception("Maximum ammount can diposite in account should not be more than 10000$");
+                throw new Exception("Maximum ammount can deposite in account should not be more than 10000$");
             }
             string dateString = createAccountDto.CreatedDate;
             CultureInfo culture = CultureInfo.CreateSpecificCulture("en-US");
@@ -42,7 +42,7 @@ namespace BankingWebApi.Repository{
         public List<User> Deposite(AccountTransactionDto depositeAccountDto)
         {
             if(depositeAccountDto.DepositeAmount > 10000) {
-                throw new Exception("Maximum ammount can diposite in account should not be more than 10000$");
+                throw new Exception("Maximum ammount can deposite in account should not be more than 10000$");
             } 
             var user = UserRepository.users.Where(user => user.Id.Equals(depositeAccountDto.UserId)).First();
             var account = user.Accounts.Where(account => account.AccountNumber.Equals(depositeAccountDto.AccountNumber)).First();

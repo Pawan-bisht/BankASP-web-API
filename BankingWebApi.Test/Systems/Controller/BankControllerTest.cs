@@ -14,6 +14,13 @@ public class TestBankController {
     private readonly IAccountRepository _accountRepository;
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
+
+    public TestBankController(){
+        _accountRepository = A.Fake<IAccountRepository>();
+        _userRepository = A.Fake<IUserRepository>();
+        _mapper = A.Fake<IMapper>();    
+    }
+        
     [Fact]
     public void BankController_GetUsers_ShouldReturn200Status() {
         
@@ -125,12 +132,4 @@ public class TestBankController {
         result.Should().BeOfType(typeof(OkObjectResult));
     }
 
-
-
-
-    public TestBankController(){
-        _accountRepository = A.Fake<IAccountRepository>();
-        _userRepository = A.Fake<IUserRepository>();
-        _mapper = A.Fake<IMapper>();    
-    }
 }
